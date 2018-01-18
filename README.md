@@ -16,3 +16,12 @@ iOS doesn't require any special configuration
 [Xamarin WebView Guide](https://developer.xamarin.com/guides/xamarin-forms/user-interface/webview/)
 
 [My discussion in Xamarin Forums](https://forums.xamarin.com/discussion/57284/it-is-possible-to-send-headers-when-calling-a-webview)
+
+
+## Build Information
+
+This project was created in **Visual Studio for Mac**
+
+Versión: 7.3.3 (build 5)
+
+Template: Xamarin Forms App
