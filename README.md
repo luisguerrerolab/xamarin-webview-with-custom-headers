@@ -8,7 +8,7 @@ The request is filled with a custom header which then can be fetched in the webs
 
 Android requires the `INTERNET` permission in order to load a website from the Internet.
 
-Basically, you need to define a WebViewClient and override the `ShouldOverrideUrlLoading(WebView view, string url)` function, then set the headers and perform the request calling `View.LoadUrl(url, headers)`
+Basically, you need to define a `WebViewClient` and override the `ShouldOverrideUrlLoading(WebView view, string url)` function, then set the headers and perform the request calling `View.LoadUrl(url, headers)`.
 
 
 ## iOS
