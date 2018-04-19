@@ -1,5 +1,6 @@
 # Xamarin WebView With Custom Headers
-An example that shows how to send request headers in a Xamarin Webview using custom renderers.
+
+An example that shows how to send request headers in a Xamarin Webview using custom renderers. An example that shows how define custom headers values from shared code is also included.
 
 The request is filled with a custom header which then can be fetched in the website scanning the request's headers:
 
@@ -22,6 +23,11 @@ var dictionary = new NSDictionary(headerKey, headerValue);
 
 webRequest.Headers = dictionary;
 ```
+
+
+## Defining custom headers values from shared code
+
+If you want to assign a custom value from shared code to each renderer, take a look at the `CustomWebView` control and `CustomWebViewPage` view to see how to achieve this. Basically, we're using Xamarin.Forms custom controls and data bindings to define custom parameters and get the value in each custom renderer.
 
 
 ## References
