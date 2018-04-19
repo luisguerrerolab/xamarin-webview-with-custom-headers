@@ -1,14 +1,27 @@
 # Xamarin WebView With Custom Headers
 An example that shows how to send request headers in a Xamarin Webview using custom renderers.
 
+The request is filled with a custom header which then can be fetched in the website scanning the request's headers:
+
+
 ## Android
 
 Android requires the `INTERNET` permission in order to load a website from the Internet.
 
+Basically, you need to define a `WebViewClient` and override the `ShouldOverrideUrlLoading(WebView view, string url)` function, then set the headers and perform the request calling `View.LoadUrl(url, headers)`.
+
 
 ## iOS
 
-iOS doesn't require any special configuration
+iOS doesn't require any special configuration.
+
+```
+var headerKey = new NSString("A-custom-header");
+var headerValue = new NSString("a custom value");
+var dictionary = new NSDictionary(headerKey, headerValue);
+
+webRequest.Headers = dictionary;
+```
 
 
 ## References
