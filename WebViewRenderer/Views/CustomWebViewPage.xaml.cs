@@ -9,12 +9,5 @@ namespace WebViewRenderer
         {
             InitializeComponent();
         }
-
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
-
-            hola.CustomHeaderValue = "header reset";
-		}
-	}
+    }
 }
