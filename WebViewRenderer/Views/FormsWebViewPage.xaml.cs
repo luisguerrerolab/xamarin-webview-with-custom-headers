@@ -5,9 +5,9 @@ using Xamarin.Forms;
 
 namespace WebViewRenderer
 {
-    public partial class SomeWebViewPage : ContentPage
+    public partial class FormsWebViewPage : ContentPage
     {
-        public SomeWebViewPage()
+        public FormsWebViewPage()
         {
             InitializeComponent();
         }

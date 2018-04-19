@@ -5,10 +5,10 @@ using Foundation;
 using UIKit;
 using WebViewRenderer.iOS.Renderers;
 
-[assembly: ExportRenderer(typeof(WebView), typeof(SomeWebViewRenderer))]
+[assembly: ExportRenderer(typeof(WebView), typeof(FormsWebViewRenderer))]
 namespace WebViewRenderer.iOS.Renderers
 {
-    public class SomeWebViewRenderer : ViewRenderer<WebView, UIWebView>
+    public class FormsWebViewRenderer : ViewRenderer<WebView, UIWebView>
     {
         protected override void OnElementChanged(ElementChangedEventArgs<WebView> e)
         {

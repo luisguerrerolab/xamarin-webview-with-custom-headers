@@ -4,13 +4,23 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using Android.Views;
 using WebViewRenderer.Droid.Renderers;
+using Android.Content;
+using Android.Webkit;
+using Android.Runtime;
 
-[assembly: ExportRenderer (typeof(WebView), typeof(SomeWebViewRenderer))]
+[assembly: ExportRenderer (typeof(Xamarin.Forms.WebView), typeof(FormsWebViewRenderer))]
 namespace WebViewRenderer.Droid.Renderers
 {
-    public class SomeWebViewRenderer : ViewRenderer<WebView, Android.Webkit.WebView>
+    public class FormsWebViewRenderer : ViewRenderer<Xamarin.Forms.WebView, Android.Webkit.WebView>
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<WebView> e)
+        Android.Content.Context _localContext;
+
+        public FormsWebViewRenderer(Context context) : base(context)
+        {
+            _localContext = context;
+        }
+
+        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.WebView> e)
         {
             base.OnElementChanged(e);
 
@@ -22,7 +32,7 @@ namespace WebViewRenderer.Droid.Renderers
             Android.Webkit.WebView webView = Control as Android.Webkit.WebView;
 
             if (Control == null) {
-                webView = new Android.Webkit.WebView(Forms.Context);
+                webView = new Android.Webkit.WebView(_localContext);
                 SetNativeControl(webView);
             }
 
@@ -34,25 +44,19 @@ namespace WebViewRenderer.Droid.Renderers
             webView.ScrollBarStyle = ScrollbarStyles.OutsideOverlay;
             webView.ScrollbarFadingEnabled = false;
 
-            webView.SetWebViewClient(new SomeWebViewClient(headers));
+            webView.SetWebViewClient(new FormsWebViewClient(headers));
             UrlWebViewSource source = Element.Source as UrlWebViewSource;
             webView.LoadUrl(source.Url, headers);
         }
     }
 
-    public class SomeWebViewClient : Android.Webkit.WebViewClient
+    public class FormsWebViewClient : Android.Webkit.WebViewClient
     {
         public Dictionary<string, string> headers { get; set; }
 
-        public SomeWebViewClient(Dictionary<string, string> requestHeaders)
+        public FormsWebViewClient(Dictionary<string, string> requestHeaders)
         {
             headers = requestHeaders;
-        }
-
-        public override bool ShouldOverrideUrlLoading(Android.Webkit.WebView View, string url)
-        {
-            View.LoadUrl(url, headers);
-            return true;
         }
 
         public override void OnPageStarted(Android.Webkit.WebView view, string url, Android.Graphics.Bitmap favicon)
@@ -67,11 +71,11 @@ namespace WebViewRenderer.Droid.Renderers
             System.Diagnostics.Debug.WriteLine("Load finished.");
         }
 
-        public override void OnReceivedError(Android.Webkit.WebView view, Android.Webkit.ClientError errorCode, string description, string failingUrl)
-        {
-            base.OnReceivedError(view, errorCode, description, failingUrl);
-        }
-    }
+		public override void OnReceivedError(Android.Webkit.WebView view, IWebResourceRequest request, WebResourceError error)
+		{
+            base.OnReceivedError(view, request, error);
+		}
+	}
 }
 
 

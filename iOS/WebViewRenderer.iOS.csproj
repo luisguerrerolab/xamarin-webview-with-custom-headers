@@ -123,7 +123,7 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Renderers\SomeWebViewRenderer.cs" />
+    <Compile Include="Renderers\FormsWebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
