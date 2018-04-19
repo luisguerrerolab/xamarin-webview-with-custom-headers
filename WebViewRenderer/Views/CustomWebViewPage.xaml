@@ -6,7 +6,6 @@
     x:Class="WebViewRenderer.CustomWebViewPage"
     Title="Custom WebView">
     <controls:CustomWebView
-        x:Name="hola"
         VerticalOptions="FillAndExpand"
         CustomHeaderValue="This value can also be assigned using data binding "
         Source="https://econduce.mx"/>
