@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:WebViewRenderer.Controls"
+    x:Class="WebViewRenderer.CustomWebViewPage"
+    Title="Custom WebView">
+    <controls:CustomWebView
+        x:Name="hola"
+        VerticalOptions="FillAndExpand"
+        CustomHeaderValue="This value can also be assigned using data binding "
+        Source="https://econduce.mx"/>
+</ContentPage>

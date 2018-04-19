@@ -10,7 +10,8 @@ namespace WebViewRenderer
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new FormsWebViewPage());
+            //MainPage = new NavigationPage(new FormsWebViewPage());
+            MainPage = new NavigationPage(new CustomWebViewPage());
         }
     }
 }

@@ -124,6 +124,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Renderers\FormsWebViewRenderer.cs" />
+    <Compile Include="Renderers\CustomWebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
