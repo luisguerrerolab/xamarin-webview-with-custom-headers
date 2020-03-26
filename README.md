@@ -1,3 +1,6 @@
+# :warning: This repo uses `UIWebView` but it has been deprecated. As of April 2020, Apple announced they will reject new apps still referencing it. — [UIWebView Deprecation and Xamarin.Forms - Xamarin Blog](https://devblogs.microsoft.com/xamarin/uiwebview-deprecation-xamarin-forms/)
+
+
 # Xamarin WebView With Custom Headers
 
 An example that shows how to send request headers in a Xamarin Webview using custom renderers. An example that shows how define custom headers values from shared code is also included.
